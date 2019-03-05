@@ -18,8 +18,7 @@ class CountryPickerCupertino extends StatefulWidget {
       this.itemHeight = defaultItemHeight,
       this.textStyle,
       this.backgroundColor,
-      this.valueChanged})
-      : super(key: key);
+      this.valueChanged});
   @override
   _CountryPickerCupertinoState createState() => _CountryPickerCupertinoState();
 }
