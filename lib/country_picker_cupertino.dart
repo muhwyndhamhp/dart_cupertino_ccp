@@ -31,10 +31,10 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
 
   @override
   Widget build(BuildContext context) {
-    return _buildBottomPicker(_pickerBuilder(context));
+    return _buildBottomPicker(context);
   }
 
-  Widget _buildBottomPicker(Widget picker) {
+  Widget _buildBottomPicker(BuildContext context) {
     return Container(
       height: widget.sheetHeight,
       color: CupertinoColors.white,
@@ -48,7 +48,7 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
           // Blocks taps from propagating to the modal sheet and popping.
           onTap: () {},
           child: SafeArea(
-            child: picker,
+            child: _pickerBuilder(context),
           ),
         ),
       ),
