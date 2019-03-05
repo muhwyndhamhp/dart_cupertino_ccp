@@ -42,7 +42,7 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
         style: widget.textStyle ??
             const TextStyle(
               color: CupertinoColors.black,
-              fontSize: 16.0,
+              fontSize: 24.0,
             ),
         child: GestureDetector(
           // Blocks taps from propagating to the modal sheet and popping.
