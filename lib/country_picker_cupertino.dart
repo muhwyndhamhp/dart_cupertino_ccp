@@ -2,10 +2,9 @@ import 'package:country_picker_cupertino_id/country.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:country_picker_cupertino_id/country_list.dart';
 
-const double defaulSheetHeight = 216;
+const double defaultSheetHeight = 216;
 const double defaultItemHeight = 32.0;
 
-/// A Calculator.
 class CountryPickerCupertino extends StatefulWidget {
   final double sheetHeight;
   final double itemHeight;
@@ -15,7 +14,7 @@ class CountryPickerCupertino extends StatefulWidget {
 
   const CountryPickerCupertino(
       {Key key,
-      this.sheetHeight = defaulSheetHeight,
+      this.sheetHeight = defaultSheetHeight,
       this.itemHeight = defaultItemHeight,
       this.textStyle,
       this.backgroundColor,
