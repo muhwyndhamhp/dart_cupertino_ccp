@@ -58,7 +58,7 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
       itemExtent: widget.itemHeight,
       backgroundColor: widget.backgroundColor ?? CupertinoColors.white,
       children: _countryList
-          .map<Widget>((Country country) => _rowBuilder(country, context)),
+          .map<Widget>((Country country) => _rowBuilder(country, context)).toList(),
       onSelectedItemChanged: (int value) {
         int _phoneCode = _countryList[value].phoneCode;
         widget.valueChanged('+$_phoneCode');
@@ -66,7 +66,7 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
     );
   }
 
-  Widget _rowBuilder(Country country, BuildContext context) {
+  _rowBuilder(Country country, BuildContext context) {
     return Center(
         child: Text(
       country.countryName,
