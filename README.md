@@ -1,6 +1,6 @@
 # country_picker_cupertino_id
 
-A flutter plugin that makes Cupertino style country code picker. You can use it by calling ```CountryPickerCupertino()``` via ```showCupertinoModal()```, example :
+A flutter plugin that makes Cupertino style country code picker. You can use it by calling ```CountryPickerCupertino()``` via ```showCupertinoModalPopup()```, example :
 
 ```dart
 void _openCCP(BuildContext parentContext) =>
