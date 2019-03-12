@@ -27,10 +27,8 @@ void _openCCP(BuildContext pageContext, UserBloc _userBloc) =>
               child: Container(
                             color: Colors.transparent,
                             child: IgnorePointer(
-                              child: BorderlessTextInputBuilder(
-                                textAlign: TextAlign.center,
-                                textController: _countryCodeController,
-                                hint: '+62',
+                              child: TextField(
+                              ...
                               ),
                             )
                       ))
