@@ -3,14 +3,14 @@
 A flutter plugin that makes Cupertino style country code picker. You can use it by calling ```CountryPickerCupertino()``` via ```showCupertinoModal()```, example :
 
 ```dart
-void _openCCP(BuildContext pageContext, UserBloc _userBloc) =>
+void _openCCP(BuildContext pageContext) =>
       showCupertinoModalPopup<void>(
           context: pageContext,
           builder: (BuildContext context) {
             return CountryPickerCupertino(
               sheetHeight: 200,
               valueChanged: ((String phoneData) =>
-                  _userBloc.setCountryCode.add(phoneData)),
+                  ...),
             );
           });
   ```
