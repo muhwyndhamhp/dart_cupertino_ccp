@@ -3,9 +3,9 @@
 A flutter plugin that makes Cupertino style country code picker. You can use it by calling ```CountryPickerCupertino()``` via ```showCupertinoModal()```, example :
 
 ```dart
-void _openCCP(BuildContext pageContext) =>
+void _openCCP(BuildContext parentContext) =>
       showCupertinoModalPopup<void>(
-          context: pageContext,
+          context: parentContext,
           builder: (BuildContext context) {
             return CountryPickerCupertino(
               sheetHeight: 200,
