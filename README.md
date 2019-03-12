@@ -1,6 +1,40 @@
 # country_picker_cupertino_id
 
-A flutter plugin that makes Cupertino style country code picker.
+A flutter plugin that makes Cupertino style country code picker. You can use it by calling ```CountryPickerCupertino()``` via ```showCupertinoModal()```, example :
+
+```dart
+void _openCCP(BuildContext pageContext, UserBloc _userBloc) =>
+      showCupertinoModalPopup<void>(
+          context: pageContext,
+          builder: (BuildContext context) {
+            return CountryPickerCupertino(
+              sheetHeight: 200,
+              valueChanged: ((String phoneData) =>
+                  _userBloc.setCountryCode.add(phoneData)),
+            );
+          });
+  ```
+  You can call it from any Widget / Gesture detector. Note that TextField has weird quirks where keyboard focus would be priority over onTap gesture, so you would need some workaround :
+  
+  ```dart
+  
+  
+  GestureDetector(
+              onTap: () {
+                FocusScope.of(context).detach();
+                _openCCP(context, _userBloc);
+              },
+              child: Container(
+                            color: Colors.transparent,
+                            child: IgnorePointer(
+                              child: BorderlessTextInputBuilder(
+                                textAlign: TextAlign.center,
+                                textController: _countryCodeController,
+                                hint: '+62',
+                              ),
+                            )
+                      ))
+   ```
 
 ## Getting Started
 
