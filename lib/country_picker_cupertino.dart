@@ -2,23 +2,23 @@ import 'package:country_picker_cupertino_id/country.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:country_picker_cupertino_id/country_list.dart';
 
-const double defaultSheetHeight = 216;
-const double defaultItemHeight = 32.0;
+const double defWidgetHeight = 216;
+const double defListItemHeight = 32.0;
 
 class CountryPickerCupertino extends StatefulWidget {
-  final double sheetHeight;
+  final double widgetHeight;
   final double itemHeight;
   final TextStyle textStyle;
   final Color backgroundColor;
-  final ValueChanged<String> valueChanged;
+  final ValueChanged<String> onChanged;
 
   const CountryPickerCupertino(
       {Key key,
-      this.sheetHeight = defaultSheetHeight,
-      this.itemHeight = defaultItemHeight,
+      this.widgetHeight = defWidgetHeight,
+      this.itemHeight = defListItemHeight,
       this.textStyle,
       this.backgroundColor,
-      this.valueChanged});
+      this.onChanged});
   @override
   _CountryPickerCupertinoState createState() => _CountryPickerCupertinoState();
 }
@@ -29,12 +29,8 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
 
   @override
   Widget build(BuildContext context) {
-    return _buildBottomPicker(context);
-  }
-
-  Widget _buildBottomPicker(BuildContext context) {
     return Container(
-      height: widget.sheetHeight,
+      height: widget.widgetHeight,
       color: CupertinoColors.white,
       child: DefaultTextStyle(
         style: widget.textStyle ??
@@ -42,8 +38,7 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
               color: CupertinoColors.black,
               fontSize: 24.0,
             ),
-        child: GestureDetector(
-          // Blocks taps from propagating to the modal sheet and popping.
+        child: GestureDetector(        
           onTap: () {},
           child: SafeArea(
             child: _pickerBuilder(context),
@@ -61,7 +56,7 @@ class _CountryPickerCupertinoState extends State<CountryPickerCupertino> {
           .map<Widget>((Country country) => _rowBuilder(country, context)).toList(),
       onSelectedItemChanged: (int value) {
         int _phoneCode = _countryList[value].phoneCode;
-        widget.valueChanged('+$_phoneCode');
+        widget.onChanged('+$_phoneCode');
       },
     );
   }
